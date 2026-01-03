@@ -1,0 +1,529 @@
+/* ROOT COLORS */
+:root {
+    --coffee: #8B6A5B;
+    --blush: #EFD9D5;
+    --cream: #F6EEE8;
+    --eucalyptus: #BFC9B3;
+    --ivory: #E8DCCB;
+    --dark: #4A4A4A;
+    --gold: #C5A059;
+}
+
+/* GLOBAL STYLES */
+* { box-sizing: border-box; } /* Important for responsive layouts */
+
+body {
+    margin: 0;
+    font-family: 'Tenor Sans', Georgia, serif;
+    background-color: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: var(--coffee); font-weight: 400; }
+
+.forever-sub { 
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+    font-size: 0.8rem; 
+    color: var(--coffee);
+    font-family: 'Bodoni Moda', serif; 
+}
+
+/* NAVIGATION */
+nav {
+    background: white;
+    border-bottom: 1px solid var(--ivory);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--dark); 
+    font-size: 0.75rem; 
+    letter-spacing: 1px; 
+    margin-left: 20px;
+    transition: 0.3s; 
+}
+
+.nav-links a:hover { color: var(--coffee); }
+
+.logo { font-family: 'Bodoni Moda', serif; color: var(--coffee); letter-spacing: 2px; }
+.heart-icon { margin-right: 8px; }
+
+/* HAMBURGER MENU STYLES */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--coffee);
+    transition: 0.3s;
+}
+
+/* HERO SECTION */
+.hero-full {
+    width: 100%;
+    height: 500px;
+    background: var(--ivory) url('C:\Users\sipho\Downloads\spring-7098130_1280.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hero-text {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    text-align: center;
+    border: 1px solid var(--ivory);
+    max-width: 600px;
+}
+
+/* IMPACT SECTION */
+.impact-section {
+    text-align: center;
+    padding: 100px 20px;
+    background: white;
+}
+
+.impact-section p { max-width: 700px; margin: 20px auto; }
+
+/* PROGRESS BAR */
+.progress-wrapper { margin-top: 30px; }
+.progress-container {
+    background: #eee;
+    width: 100%;
+    height: 8px;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: var(--eucalyptus);
+    width: 0%;
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* STUDY TABLE */
+.container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+
+table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; }
+th { background: var(--eucalyptus); color: white; padding: 15px; text-align: left; }
+td { padding: 20px; border-bottom: 1px solid var(--ivory); }
+
+.table-link { color: var(--coffee); font-weight: bold; text-decoration: none; }
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--coffee);
+    color: white;
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+.btn-gold { background: var(--gold); }
+
+/* MOBILE RESPONSIVE QUERIES */
+@media screen and (max-width: 768px) {
+    /* Menu logic */
+    .menu-toggle { display: flex; }
+    
+    .nav-links {
+        display: none; /* Hide links on mobile initially */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        padding: 20px;
+        border-bottom: 1px solid var(--ivory);
+        text-align: center;
+    }
+
+    .nav-links.active { display: flex; } /* Shown when toggled */
+    .nav-links a { margin: 15px 0; font-size: 1rem; }
+
+    /* Stacking Table into Cards */
+    
+    
+    table, thead, tbody, th, td, tr { display: block; }
+    th { display: none; } /* Hide headers */
+    
+    tr { margin-bottom: 20px; border: 1px solid var(--ivory); }
+    
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid var(--cream);
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: var(--coffee);
+        text-transform: uppercase;
+        font-size: 0.7rem;
+    }
+}
+
+/* READING PAGE SPECIFIC STYLES */
+.reading-container {
+    max-width: 700px; /* Optimal reading width for focus */
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.study-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.divider {
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto;
+}
+
+.scripture-content {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.verse-num {
+    font-size: 0.7rem;
+    vertical-align: super;
+    margin-right: 5px;
+    color: var(--coffee);
+    font-weight: bold;
+}
+
+blockquote {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--coffee);
+    border-left: 3px solid var(--blush);
+    padding-left: 30px;
+    margin: 40px 0;
+}
+
+/* REFLECTION AREA */
+.reflection-area {
+    margin-top: 60px;
+    padding: 40px;
+    background: white;
+    border: 1px solid var(--ivory);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid var(--ivory);
+    background: var(--cream);
+    padding: 15px;
+    font-family: inherit;
+    margin: 20px 0;
+    resize: none;
+}
+
+.study-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--coffee);
+    color: var(--coffee);
+}
+
+/* Mobile adjustments for reading */
+@media screen and (max-width: 600px) {
+    .reading-container { padding: 40px 20px; }
+    .scripture-content { font-size: 1.05rem; }
+    blockquote { font-size: 1.2rem; padding-left: 15px; }
+}
+
+/* RESOURCE PAGE STYLES */
+.resource-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: white;
+    border-bottom: 1px solid var(--ivory);
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 40px 30px;
+    border: 1px solid var(--ivory);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--coffee);
+    box-shadow: 0 10px 30px rgba(139, 106, 91, 0.1);
+}
+
+.card-tag {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--eucalyptus);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--dark);
+    margin-bottom: 25px;
+    flex-grow: 1; /* Ensures buttons align even if text length varies */
+}
+
+/* Custom button style for the cards */
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--coffee);
+    color: var(--coffee);
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--coffee);
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .resource-hero { padding: 40px 20px; }
+    .resource-grid { gap: 20px; }
+}
+
+/* CONNECT PAGE STYLES */
+.connect-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.contact-form-section {
+    flex: 2; /* Takes up more space */
+}
+
+.contact-sidebar {
+    flex: 1; /* Takes up less space */
+    position: sticky;
+    top: 100px;
+}
+
+.contact-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--coffee);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--ivory);
+    background: white;
+    font-family: 'Tenor Sans', sans-serif;
+    color: var(--dark);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--coffee);
+}
+
+.sidebar-box {
+    background: white;
+    padding: 30px;
+    border: 1px solid var(--ivory);
+    margin-bottom: 30px;
+}
+
+.gold-box {
+    background: var(--cream);
+    border-color: var(--gold);
+}
+
+.social-links a {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--coffee);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* MOBILE CONNECT LAYOUT */
+@media screen and (max-width: 768px) {
+    .connect-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .contact-sidebar {
+        position: static;
+        width: 100%;
+    }
+}
+
+/* LOGO AS A DIV */
+.logo { 
+    display: flex;
+    align-items: center;
+    font-family: 'Bodoni Moda', serif; 
+    color: var(--coffee);
+    flex-shrink: 0; 
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Makes it look clickable even though it's a div */
+}
+
+.logo:hover { 
+    transform: translateX(5px); 
+}
+
+/* FOOTER STYLES */
+.main-footer {
+    background-color: white;
+    border-top: 1px solid var(--ivory);
+    padding: 80px 20px 40px 20px;
+    margin-top: 100px; /* Creates breathing room from the content above */
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-logo {
+    flex: 2; /* Gives the logo area more room */
+    min-width: 250px;
+}
+
+.footer-logo p {
+    font-size: 0.9rem;
+    color: var(--dark);
+    margin-top: 15px;
+    max-width: 300px;
+}
+
+.footer-links, .footer-social {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-links h4, .footer-social h4 {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--coffee);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-links a, .footer-social a {
+    display: block;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 60px auto 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid var(--cream);
+    text-align: center;
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* MOBILE FOOTER */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-logo p {
+        margin: 15px auto;
+    }
+    .main-footer {
+        padding: 60px 20px 30px 20px;
+    }
+}
