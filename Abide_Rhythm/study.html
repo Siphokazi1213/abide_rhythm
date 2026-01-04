@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study | Abide Rhythm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+    <span class="heart-icon">&#9825;</span>
+    <strong>ABIDE RHYTHM</strong>
+</div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="study.html" class="active-link">STUDY</a>
+                <a href="resources.html">RESOURCES</a>
+                <a href="connect.html">CONNECT</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="reading-container">
+        <header class="study-header">
+            <div id="chapter-subtitle" class="forever-sub">Gospel of John</div>
+            <h1 id="chapter-title">Chapter 1</h1>
+            <div class="divider"></div>
+        </header>
+
+        <article id="scripture-display" class="scripture-content">
+            </article>
+
+        <section class="reflection-area">
+            <h3>Journal & Reflect</h3>
+            <textarea id="study-notes" placeholder="What is the Holy Spirit speaking to you today?"></textarea>
+            <button class="btn" onclick="saveNotes()">SAVE NOTES</button>
+        </section>
+
+        <div class="study-nav">
+            <button id="prev-chapter" class="btn btn-outline">← PREVIOUS</button>
+            <button id="next-chapter" class="btn">NEXT CHAPTER →</button>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" style="color: var(--coffee); font-size: 0.8rem; text-decoration: none; letter-spacing: 1px;">BACK TO STUDY PLAN</a>
+        </div>
+    </main>
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <span class="heart-icon">&#9825;</span>
+            <strong>ABIDE RHYTHM</strong>
+            <p>Nourishing the soul through the rhythm of the Word.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>EXPLORE</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="study.html">Study Plan</a>
+            <a href="resources.html">Resources</a>
+        </div>
+
+        <div class="footer-social">
+            <h4>COMMUNITY</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Pinterest</a>
+            <a href="connect.html">Contact Us</a>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Abide Rhythm. All rights reserved. | <em>Selah.</em></p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
