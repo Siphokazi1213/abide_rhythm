@@ -126,8 +126,3 @@ function saveNotes() {
         alert('Your reflections for ' + currentChapterId + ' have been saved.');
     }
 }
-
-// Make the logo div navigate to home
-document.querySelector('.logo').addEventListener('click', () => {
-    window.location.href = 'index.html';
-});
