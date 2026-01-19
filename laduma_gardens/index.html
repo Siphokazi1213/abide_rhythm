@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laduma Gardens | Garden Services & Truck Hire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">LADUMA<span>GARDENS</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact" class="nav-btn">Request Quote</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="side garden-side">
+            <div class="content">
+                <h2>Pristine Gardens</h2>
+                <p>Professional maintenance & landscaping since 2001.</p>
+                <button onclick="scrollToContact('Garden')">Book Maintenance</button>
+            </div>
+        </div>
+        <div class="side truck-side">
+            <div class="content">
+                <h2>Reliable Truck Hire</h2>
+                <p>4 & 8 Ton trucks for local & long distance moving.</p>
+                <button onclick="scrollToContact('Truck')">Hire a Truck</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Get a Free Quote</h2>
+            <form id="quoteForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                
+                <select id="serviceSelect" required onchange="updateFormTheme()">
+                    <option value="" disabled selected>Select Service Needed</option>
+                    <option value="Garden">Garden Maintenance / Landscaping</option>
+                    <option value="Truck">Truck Hire / Furniture Removal</option>
+                </select>
+
+                <textarea placeholder="Tell us more about your project..." rows="5"></textarea>
+                
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <a href="https://wa.me/27734129047" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
