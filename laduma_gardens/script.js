@@ -1,33 +1,39 @@
-// Function to scroll to contact form and auto-select the service
-function scrollToContact(serviceType) {
-    const section = document.getElementById('contact');
-    const selector = document.getElementById('serviceSelect');
-    
-    // Auto-select the dropdown option
-    selector.value = serviceType;
-    updateFormTheme();
-    
-    // Smooth scroll
-    section.scrollIntoView({ behavior: 'smooth' });
-}
-
-// Visual feedback: Change form button color based on service selected
-function updateFormTheme() {
-    const service = document.getElementById('serviceSelect').value;
-    const submitBtn = document.querySelector('.submit-btn');
-    
-    if (service === 'Garden') {
-        submitBtn.style.backgroundColor = '#2d6a4f'; // Green
-        submitBtn.innerText = 'Request Garden Quote';
-    } else if (service === 'Truck') {
-        submitBtn.style.backgroundColor = '#e67e22'; // Orange
-        submitBtn.innerText = 'Request Truck Hire';
+// Mobile Menu Toggle
+function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    if (nav.style.display === "flex") {
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "flex";
+        nav.style.flexDirection = "column";
+        nav.style.position = "absolute";
+        nav.style.top = "70px";
+        nav.style.left = "0";
+        nav.style.width = "100%";
+        nav.style.background = "white";
+        nav.style.padding = "20px";
+        nav.style.boxShadow = "0 10px 10px rgba(0,0,0,0.1)";
     }
 }
 
-// Basic Form Submission Alert
-document.getElementById('quoteForm').addEventListener('submit', function(e) {
+// Form Submission Logic
+document.getElementById('detailedForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const service = document.getElementById('serviceSelect').value;
-    alert(`Thank you! Your ${service} inquiry has been sent to Laduma Gardens.`);
+    
+    // Collect data
+    const name = this.first_name.value;
+    const service = this.main_service.value;
+    
+    alert(`Thank you, ${name}! Your request for ${service} has been received. Paul or Priscilla will contact you shortly.`);
+    this.reset();
+});
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
