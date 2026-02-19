@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Word | Abide Rhythm</title>
+    <title>Library | Abide Rhythm</title>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Tenor+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,73 +15,54 @@
                 <span class="heart-icon">&#9825;</span>
                 <strong>ABIDE RHYTHM</strong>
             </div>
+            
             <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
+
             <div class="nav-links" id="nav-links">
                 <a href="index.html">HOME</a>
                 <a href="about.html">ABOUT</a>
-                <a href="study.html" class="active-link">THE WORD</a>
+                <a href="study.html">THE WORD</a>
                 <a href="resources.html">RESOURCES</a>
             </div>
         </div>
     </nav>
 
-    <main class="reading-container">
-        <header class="study-header">
-            <div id="chapter-subtitle" class="forever-sub">Gospel of John</div>
-            <h1 id="chapter-title">The Word</h1>
-            
-            <div style="margin-top: 10px;">
-                <a href="#devotional-hub" style="font-size: 0.65rem; letter-spacing: 1px; color: var(--gold); text-decoration: none; text-transform: uppercase; font-weight: bold;">
-                    ↓ Skip to Heart Reflections
-                </a>
-            </div>
-            
-            <div class="divider"></div>
-        </header>
+    <header class="resource-hero">
+        <div class="forever-sub">The Selah Library</div>
+        <h1>Browse by Topic</h1>
+        <p>Quiet reflections organized to meet your spirit where it is today.</p>
+    </header>
 
-        <article id="scripture-display" class="scripture-content"></article>
-
-        <section class="reflection-area">
-            <h3>Journal & Reflect</h3>
-            <textarea id="study-notes" placeholder="What is the Holy Spirit speaking to you today?"></textarea>
-            
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <button class="btn" onclick="saveNotes()">SAVE NOTES</button>
-                <button class="btn btn-outline" onclick="window.print()">PRINT JOURNAL</button>
-            </div>
-        </section>
-
-        <div class="study-nav">
-            <button id="prev-chapter" class="btn btn-outline">← PREVIOUS</button>
-            <button id="next-chapter" class="btn">NEXT CHAPTER →</button>
-        </div>
+    <main class="container">
         
-        <div style="text-align: center; margin: 40px 0 80px 0;">
-            <a href="index.html#plan" style="color: var(--coffee); font-size: 0.8rem; text-decoration: none; letter-spacing: 1px;">BACK TO STUDY PLAN</a>
-        </div>
-
-        <section id="devotional-hub" class="devotional-hub" style="border-top: 1px solid var(--ivory); padding-top: 60px;">
-            <div class="forever-sub">Heart Reflections</div>
-            <h2 style="margin-bottom: 30px;">Selah Moments</h2>
-            
-            <div class="resource-grid">
+        <section id="topic-rest" style="margin-bottom: 80px;">
+            <h3 style="border-bottom: 1px solid var(--ivory); padding-bottom: 10px; color: var(--eucalyptus); letter-spacing: 2px;">REST & SOLITUDE</h3>
+            <div class="resource-grid" style="margin-top: 30px;">
                 <div class="card">
-                    <div class="card-tag">LATEST POST</div>
+                    <div class="card-tag">LATEST</div>
                     <h3>Finding Rest in the Rush</h3>
-                    <p>A reflection on Luke 5:16 and prioritizing the "quiet place."</p>
-                    <a href="blog.html#topic-rest" class="btn btn-outline">VIEW IN LIBRARY</a>
-                </div>
-
-                <div class="card" style="background: var(--cream); border: 1px solid var(--ivory);">
-                    <div class="card-tag">ARCHIVE</div>
-                    <h3>The Library</h3>
-                    <p>Browse all devotionals organized by topic and heart needs.</p>
-                    <a href="blog.html" class="btn">VIEW ALL TOPICS</a>
+                    <p>Why Jesus prioritized the quiet place over the crowds, and how we can too.</p>
+                    <a href="post-1.html" class="btn btn-outline">READ DEVOTIONAL</a>
                 </div>
             </div>
         </section>
+
+        <section id="topic-faith" style="margin-bottom: 80px;">
+            <h3 style="border-bottom: 1px solid var(--ivory); padding-bottom: 10px; color: var(--gold); letter-spacing: 2px;">WALKING BY FAITH</h3>
+            <div class="resource-grid" style="margin-top: 30px;">
+                <div class="card">
+                    <div class="card-tag">NEW</div>
+                    <h3>The Power of Selah</h3>
+                    <p>Understanding the intentional pauses in our journey with God.</p>
+                    <a href="post-2.html" class="btn btn-outline">READ DEVOTIONAL</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <section class="newsletter-section" id="subscribe-section">
@@ -127,6 +108,8 @@
             <p>&copy; 2026 Abide Rhythm. All rights reserved. <br> <em>Selah.</em></p>
         </div>
     </footer>
+
+    <button id="backToTop" class="back-to-top" title="Back to Top">↑</button>
 
     <script src="script.js"></script>
 </body>
